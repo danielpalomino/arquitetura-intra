@@ -47,5 +47,15 @@ PACKAGE INTRA_LIBRARY IS
 			shifted_sample	: OUT STD_LOGIC_VECTOR(n+3 DOWNTO 0)
 			);
 	END COMPONENT;
+	
+	COMPONENT multiplier IS
+		GENERIC (n: INTEGER:= 8)
+		PORT (
+			clk, reset		: IN STD_LOGIC;
+			bs_selector		: IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+			sample			: IN STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+			result			: OUT STD_LOGIC_VECTOR(n+6 DOWNTO 0)
+			);
+	END COMPONENT;
 
 END INTRA_LIBRARY;
