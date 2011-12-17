@@ -3,7 +3,7 @@ USE ieee.std_logic_1164.all;
 
 PACKAGE INTRA_LIBRARY IS
 
-	TYPE fsm IS (idle, inicio);
+	TYPE fsm IS (idle, load_neighbors, load_original);
 
 	COMPONENT bs0 IS
 		GENERIC (n: INTEGER:= 8);
