@@ -9,7 +9,8 @@ ENTITY original_buffer IS
 		clk,reset	: IN STD_LOGIC;
 		enable_a		: IN STD_LOGIC;
 		enable_l		: IN STD_LOGIC;
-		input_sample: IN STD_LOGIC_VECTOR((n*4)-1 DOWNTO 0);
+		input_sample_above: IN STD_LOGIC_VECTOR((n*4)-1 DOWNTO 0);
+		input_sample_left: IN STD_LOGIC_VECTOR((n*4)-1 DOWNTO 0);
 		original_a0	: OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
 		original_a1	: OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
 		original_a2	: OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0);
@@ -59,16 +60,16 @@ BEGIN
 			original_left03	<= (OTHERS=>'0');
 		ELSIF clk'EVENT AND clk = '1' THEN
 			IF enable_a = '1' THEN
-				original_a0 <= input_sample(n-1 DOWNTO 0);
-				original_a1 <= input_sample((n*2)-1 DOWNTO n);
-				original_a2 <= input_sample((n*3)-1 DOWNTO n*2);
-				original_a3 <= input_sample((n*4)-1 DOWNTO n*3);
+				original_a0 <= input_sample_above(n-1 DOWNTO 0);
+				original_a1 <= input_sample_above((n*2)-1 DOWNTO n);
+				original_a2 <= input_sample_above((n*3)-1 DOWNTO n*2);
+				original_a3 <= input_sample_above((n*4)-1 DOWNTO n*3);
 			END IF;
 			IF enable_l = '1' THEN
-				original_left30	<=	input_sample(n-1 DOWNTO 0);
-				original_left31	<=	input_sample((n*2)-1 DOWNTO n);
-				original_left32	<=	input_sample((n*3)-1 DOWNTO n*2);
-				original_left33	<=	input_sample((n*4)-1 DOWNTO n*3);
+				original_left30	<=	input_sample_left(n-1 DOWNTO 0);
+				original_left31	<=	input_sample_left((n*2)-1 DOWNTO n);
+				original_left32	<=	input_sample_left((n*3)-1 DOWNTO n*2);
+				original_left33	<=	input_sample_left((n*4)-1 DOWNTO n*3);
 				
 				original_left20	<=	original_left30;
 				original_left21	<=	original_left31;

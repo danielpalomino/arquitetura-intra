@@ -17,7 +17,8 @@ ENTITY intra_pc IS
 		reset_buffers					: OUT STD_LOGIC;
 		--MEMORY ADDRESSES
 		neighbor_address				: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-		original_address				: OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+		original_address_l			: OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+		original_address_a			: OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
 		--CONTROLE DATA PATH
 		sample_sel_data_path_a		: OUT STD_LOGIC;
 		sample_sel_data_path_l		: OUT STD_LOGIC;
@@ -53,6 +54,8 @@ END intra_pc;
 ARCHITECTURE behavior OF intra_pc IS
 
 SIGNAL cs, ns: fsm;
+TYPE angle_table IS ARRAY (1 TO 17) OF INTEGER;
+SIGNAL modes_angle: angle_table := (-32,-26,-21,-17,-13,-9,-5,-2,0,2,5,9,13,17,21,26,32);
 
 BEGIN
 
@@ -87,7 +90,8 @@ BEGIN
 					reset_buffers 					<= '0';
 					--MEMORY ADDRESSES
 					neighbor_address				<= "00000000";
-					original_address				<= "0000000000";
+					original_address_a			<= "0000000000";
+					original_address_l			<= "0000000000";
 					--CONTROLE DATA PATH
 					sample_sel_data_path_a		<= '0';
 					sample_sel_data_path_l		<= '0';
@@ -124,75 +128,168 @@ BEGIN
 					neighbor_address				<= conv_std_logic_vector(int_neighbor_address,8);
 					enable_neighbor_buffer		<= '1';
 					IF int_neighbor_address < 129 THEN
-						cs <= load_neighbors;
+						ns <= load_neighbors;
 					ELSE
-						cs <= load_original_above;
+						ns <= load_original;
 					END IF;
 					int_neighbor_address	:= int_neighbor_address + 1;
 					
-				WHEN load_original_above =>
-					enable_a_original_buffer	<= '1';
-					original_address				<= conv_std_logic_vector((line_above*16+col_above),9);
-					IF int_original_address_above < 1024 THEN
-						line_above := line_above + 1;
+				WHEN load_original =>
+					enable_a_original_buffer <= '1';
+					enable_l_original_buffer <= '1';
+					original_address_a   	 <= conv_std_logic_vector((line_above*16+col_above),10);
+					original_address_l		 <= conv_std_logic_vector((line_left*16+col_left),10);					
+					
+					line_above := line_above + 1;
+					line_left := line_left + 1;
+					
+					ns <= load_original_left3;
+					
+				WHEN load_original_left3 =>
+					enable_a_original_buffer <= '0';
+					original_address_l		 <= conv_std_logic_vector((line_left*16+col_left),10);
+					line_left := line_left + 1;
+					IF line_left < 4 THEN
+						ns <= load_original_left3;
 					ELSE
+						ns <= compute_mode_9_25;
+					END IF;
+				
+				WHEN compute_mode_9_25 =>
+					enable_modes_sad_buffer_above	<= "00000000100000000";
+					enable_modes_sad_buffer_left	<= "00000000100000000";
+					
+					sample_sel_data_path_a	 <= '0';
+					sample_sel_data_path_l	 <= '0';
+					enable_a_original_buffer <= '1';
+					enable_l_original_buffer <= '1';
+					original_address_a   	 <= conv_std_logic_vector((line_above*16+col_above),10);
+					original_address_l		 <= conv_std_logic_vector((line_left*16+col_left),10);
+					line_above := line_above + 1;
+					line_left := line_left + 1;
+				
+					IF (line_above = 63) THEN
 						line_above := 0;
 						col_above := col_above + 1;
 					END IF;
-					cs <= load_original_left;
 					
-				WHEN load_original_left =>
-					enable_a_original_buffer <= '0';
-					enable_l_original_buffer <= '1';
-					original_address			 <= conv_std_logic_vector((line_left*16+col_left),9);
-					IF int_original_address_left < 1024 THEN
-						line_left := line_left + 1;
-						IF line_left%4 == 0 THEN
-							
-						ELSE
-							line_left := line_left + 1;
-						END IF;
-					ELSE
+					IF (line_left = 63) THEN
 						line_left := 0;
 						col_left := col_left + 1;
-					cs <= compute_mode0;	
+					END IF;
+					
+					IF (col_above = 15 and line_above = 63) THEN
+						ns <= final0;
+					END IF;
+					
+					mux_above_neighbor_buffer	<= conv_std_logic_vector(60, 7) - 
+															conv_std_logic_vector(col_above,7) - 
+															(conv_std_logic_vector(line_above * modes_angle(9), 7));
+		
+					mux_left_neighbor_buffer	<= conv_std_logic_vector(60, 7) - 
+															conv_std_logic_vector(col_above,7) - 
+															(conv_std_logic_vector(line_above * modes_angle(9), 7));
 					
 					
-					
-					
-				WHEN compute_mode_9_25 =>
-					enable_l_original_buffer <= '0';
-					sample_sel_data_path_a	 <= '0';
-					sample_sel_data_path_l	 <= '0';
-					mux_above_neighbor_buffer	<= "0111100";
-					mux_left_neighbor_buffer	<= "0100000";
-					
-					
+					ns <= compute_mode_9_25;
+				
+				WHEN final0 =>
+					ns <= final1;
+				WHEN final1 =>
+					ns <= final2;
+				WHEN final2 =>
+					ns <= final3;
+				WHEN final3 =>
+					ns <= final4;
+				WHEN final4 =>
+					ns <= final5;
+				WHEN final5 =>
+					ns <= idle;
 
 			END CASE;
 		--BLOCO 32
 		ELSIF blk_size = "001" THEN
 			CASE cs IS
-				WHEN idle =>
-				WHEN load_neighbors =>
+				WHEN idle =>					
+				WHEN load_neighbors =>					
+				WHEN load_original =>				
+				WHEN load_original_left3 =>				
+				WHEN compute_mode_9_25 =>					
+				WHEN final0 =>
+					ns <= final1;
+				WHEN final1 =>
+					ns <= final2;
+				WHEN final2 =>
+					ns <= final3;
+				WHEN final3 =>
+					ns <= final4;
+				WHEN final4 =>
+					ns <= final5;
+				WHEN final5 =>
+					ns <= idle;
 			END CASE;
 		--BLOCO 16
 		ELSIF blk_size = "010" THEN
 			CASE cs IS
-				WHEN idle =>
-				WHEN load_neighbors =>
+				WHEN idle =>					
+				WHEN load_neighbors =>					
+				WHEN load_original =>				
+				WHEN load_original_left3 =>				
+				WHEN compute_mode_9_25 =>					
+				WHEN final0 =>
+					ns <= final1;
+				WHEN final1 =>
+					ns <= final2;
+				WHEN final2 =>
+					ns <= final3;
+				WHEN final3 =>
+					ns <= final4;
+				WHEN final4 =>
+					ns <= final5;
+				WHEN final5 =>
+					ns <= idle;
 			END CASE;
 		--BLOCO 8
 		ELSIF blk_size = "011" THEN
 			CASE cs IS
-				WHEN idle =>
-				WHEN load_neighbors =>
+				WHEN idle =>					
+				WHEN load_neighbors =>					
+				WHEN load_original =>				
+				WHEN load_original_left3 =>				
+				WHEN compute_mode_9_25 =>					
+				WHEN final0 =>
+					ns <= final1;
+				WHEN final1 =>
+					ns <= final2;
+				WHEN final2 =>
+					ns <= final3;
+				WHEN final3 =>
+					ns <= final4;
+				WHEN final4 =>
+					ns <= final5;
+				WHEN final5 =>
+					ns <= idle;
 			END CASE;
 		--BLOCO 4
 		ELSIF blk_size = "100" THEN
 			CASE cs IS
-				WHEN idle =>
-				WHEN load_neighbors =>
+				WHEN idle =>					
+				WHEN load_neighbors =>					
+				WHEN load_original =>				
+				WHEN load_original_left3 =>				
+				WHEN compute_mode_9_25 =>					
+				WHEN final0 =>
+					ns <= final1;
+				WHEN final1 =>
+					ns <= final2;
+				WHEN final2 =>
+					ns <= final3;
+				WHEN final3 =>
+					ns <= final4;
+				WHEN final4 =>
+					ns <= final5;
+				WHEN final5 =>
+					ns <= idle;
 			END CASE;
 		END IF;
 	END PROCESS;

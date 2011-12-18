@@ -40,7 +40,8 @@ ENTITY intra_po IS
 		enable_modes_sad_buffer_left	: IN STD_LOGIC_VECTOR(16 DOWNTO 0);
 		--ENTRADAS
 		input_neighbor					: IN STD_LOGIC_VECTOR (n-1 DOWNTO 0);
-		input_original					: IN STD_LOGIC_VECTOR ((n*4)-1 DOWNTO 0);
+		input_original_above			: IN STD_LOGIC_VECTOR ((n*4)-1 DOWNTO 0);
+		input_original_left			: IN STD_LOGIC_VECTOR ((n*4)-1 DOWNTO 0);
 		--SAIDAS
 		output_sad_above				: OUT STD_LOGIC_VECTOR(n+23 DOWNTO 0);
 		output_sad_left				: OUT STD_LOGIC_VECTOR(n+23 DOWNTO 0)
@@ -107,7 +108,8 @@ BEGIN
 	reset				=> reset,
 	enable_a			=> enable_a_original_buffer,
 	enable_l			=> enable_l_original_buffer,
-	input_sample	=> input_original,
+	input_sample_above	=> input_original_above,
+	input_sample_left	=> input_original_left,
 	original_a0		=> original_a0,
 	original_a1		=> original_a1,
 	original_a2		=> original_a2,

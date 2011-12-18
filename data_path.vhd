@@ -23,19 +23,19 @@ SIGNAL fract_predicted_pixel	: STD_LOGIC_VECTOR (n+2 DOWNTO 0);
 
 BEGIN
 
-PF_OPERATOR: pf GENERIC MAP (n) PORT MAP (
-clk 							=> clk,
-reset 						=> reset,
-bs_selector0 				=> bs_selector0,
-bs_selector1 				=> bs_selector1,
-sample0 						=> sample0,
-sample1 						=> sample1,
-fract_predicted_pixel	=> fract_predicted_pixel
-);
+	PF_OPERATOR: pf GENERIC MAP (n) PORT MAP (
+	clk 							=> clk,
+	reset 						=> reset,
+	bs_selector0 				=> bs_selector0,
+	bs_selector1 				=> bs_selector1,
+	sample0 						=> sample0,
+	sample1 						=> sample1,
+	fract_predicted_pixel	=> fract_predicted_pixel
+	);
 
-WITH sample_sel SELECT
-predicted_pixel	<=	(sample0(n-1) & sample0(n-1) & sample0(n-1) & sample0)	WHEN '0',
-							fract_predicted_pixel												WHEN OTHERS;
+	WITH sample_sel SELECT
+	predicted_pixel	<=	(sample0(n-1) & sample0(n-1) & sample0(n-1) & sample0)	WHEN '0',
+								fract_predicted_pixel												WHEN OTHERS;
 
 	PROCESS (clk,reset)
 	BEGIN
