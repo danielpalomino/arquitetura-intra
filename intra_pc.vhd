@@ -321,6 +321,22 @@ BEGIN
 					END IF;
 				
 				WHEN compute_mode_1_1 =>
+					bs_selector0_data_path_a0	<= "00001";
+					bs_selector1_data_path_a0	<= "00001";
+					bs_selector0_data_path_a1	<= "00001";
+					bs_selector1_data_path_a1	<= "00001";
+					bs_selector0_data_path_a2	<= "00001";
+					bs_selector1_data_path_a2	<= "00001";
+					bs_selector0_data_path_a3	<= "00001";
+					bs_selector1_data_path_a3	<= "00001";		
+					bs_selector0_data_path_l0	<= "00001";
+					bs_selector1_data_path_l0	<= "00001";		
+					bs_selector0_data_path_l1	<= "00001";
+					bs_selector1_data_path_l1	<= "00001";		
+					bs_selector0_data_path_l2	<= "00001";
+					bs_selector1_data_path_l2	<= "00001";		
+					bs_selector0_data_path_l3	<= "00001";
+					bs_selector1_data_path_l3	<= "00001";
 					enable_modes_sad_buffer_above	<= "00000000000000001";
 					enable_modes_sad_buffer_left	<= "00000000000000001";
 					
@@ -359,6 +375,22 @@ BEGIN
 					ns <= compute_mode_2_18;
 					
 				WHEN compute_mode_2_18 =>
+					bs_selector0_data_path_a0	<= "00010";
+					bs_selector1_data_path_a0	<= "00010";
+					bs_selector0_data_path_a1	<= "00010";
+					bs_selector1_data_path_a1	<= "00010";
+					bs_selector0_data_path_a2	<= "00010";
+					bs_selector1_data_path_a2	<= "00010";
+					bs_selector0_data_path_a3	<= "00010";
+					bs_selector1_data_path_a3	<= "00010";		
+					bs_selector0_data_path_l0	<= "00010";
+					bs_selector1_data_path_l0	<= "00010";		
+					bs_selector0_data_path_l1	<= "00010";
+					bs_selector1_data_path_l1	<= "00010";		
+					bs_selector0_data_path_l2	<= "00010";
+					bs_selector1_data_path_l2	<= "00010";		
+					bs_selector0_data_path_l3	<= "00010";
+					bs_selector1_data_path_l3	<= "00010";
 					enable_modes_sad_buffer_above	<= "00000000000000010";
 					enable_modes_sad_buffer_left	<= "00000000000000010";
 					
@@ -397,6 +429,22 @@ BEGIN
 					ns <= compute_mode_3_19;
 					
 				WHEN compute_mode_3_19 =>
+					bs_selector0_data_path_a0	<= "00011";
+					bs_selector1_data_path_a0	<= "00011";
+					bs_selector0_data_path_a1	<= "00011";
+					bs_selector1_data_path_a1	<= "00011";
+					bs_selector0_data_path_a2	<= "00011";
+					bs_selector1_data_path_a2	<= "00011";
+					bs_selector0_data_path_a3	<= "00011";
+					bs_selector1_data_path_a3	<= "00011";		
+					bs_selector0_data_path_l0	<= "00011";
+					bs_selector1_data_path_l0	<= "00011";		
+					bs_selector0_data_path_l1	<= "00011";
+					bs_selector1_data_path_l1	<= "00011";		
+					bs_selector0_data_path_l2	<= "00011";
+					bs_selector1_data_path_l2	<= "00011";		
+					bs_selector0_data_path_l3	<= "00011";
+					bs_selector1_data_path_l3	<= "00011";
 					enable_modes_sad_buffer_above	<= "00000000000000100";
 					enable_modes_sad_buffer_left	<= "00000000000000100";
 					
@@ -435,6 +483,22 @@ BEGIN
 					ns <= compute_mode_4_20;
 					
 				WHEN compute_mode_4_20 =>
+					bs_selector0_data_path_a0	<= "00100";
+					bs_selector1_data_path_a0	<= "00100";
+					bs_selector0_data_path_a1	<= "00100";
+					bs_selector1_data_path_a1	<= "00100";
+					bs_selector0_data_path_a2	<= "00100";
+					bs_selector1_data_path_a2	<= "00100";
+					bs_selector0_data_path_a3	<= "00100";
+					bs_selector1_data_path_a3	<= "00100";		
+					bs_selector0_data_path_l0	<= "00100";
+					bs_selector1_data_path_l0	<= "00100";		
+					bs_selector0_data_path_l1	<= "00100";
+					bs_selector1_data_path_l1	<= "00100";		
+					bs_selector0_data_path_l2	<= "00100";
+					bs_selector1_data_path_l2	<= "00100";		
+					bs_selector0_data_path_l3	<= "00100";
+					bs_selector1_data_path_l3	<= "00100";
 					enable_modes_sad_buffer_above	<= "00000000000001000";
 					enable_modes_sad_buffer_left	<= "00000000000001000";
 					
@@ -473,6 +537,22 @@ BEGIN
 					ns <= compute_mode_5_21;
 					
 				WHEN compute_mode_5_21 =>
+					bs_selector0_data_path_a0	<= "00101";
+					bs_selector1_data_path_a0	<= "00101";
+					bs_selector0_data_path_a1	<= "00101";
+					bs_selector1_data_path_a1	<= "00101";
+					bs_selector0_data_path_a2	<= "00101";
+					bs_selector1_data_path_a2	<= "00101";
+					bs_selector0_data_path_a3	<= "00101";
+					bs_selector1_data_path_a3	<= "00101";		
+					bs_selector0_data_path_l0	<= "00101";
+					bs_selector1_data_path_l0	<= "00101";		
+					bs_selector0_data_path_l1	<= "00101";
+					bs_selector1_data_path_l1	<= "00101";		
+					bs_selector0_data_path_l2	<= "00101";
+					bs_selector1_data_path_l2	<= "00101";		
+					bs_selector0_data_path_l3	<= "00101";
+					bs_selector1_data_path_l3	<= "00101";
 					enable_modes_sad_buffer_above	<= "00000000000010000";
 					enable_modes_sad_buffer_left	<= "00000000000010000";
 					
@@ -511,6 +591,22 @@ BEGIN
 					ns <= compute_mode_6_22;
 				
 				WHEN compute_mode_6_22 =>
+					bs_selector0_data_path_a0	<= "00110";
+					bs_selector1_data_path_a0	<= "00110";
+					bs_selector0_data_path_a1	<= "00110";
+					bs_selector1_data_path_a1	<= "00110";
+					bs_selector0_data_path_a2	<= "00110";
+					bs_selector1_data_path_a2	<= "00110";
+					bs_selector0_data_path_a3	<= "00110";
+					bs_selector1_data_path_a3	<= "00110";		
+					bs_selector0_data_path_l0	<= "00110";
+					bs_selector1_data_path_l0	<= "00110";		
+					bs_selector0_data_path_l1	<= "00110";
+					bs_selector1_data_path_l1	<= "00110";		
+					bs_selector0_data_path_l2	<= "00110";
+					bs_selector1_data_path_l2	<= "00110";		
+					bs_selector0_data_path_l3	<= "00110";
+					bs_selector1_data_path_l3	<= "00110";
 					enable_modes_sad_buffer_above	<= "00000000000100000";
 					enable_modes_sad_buffer_left	<= "00000000000100000";
 					
@@ -549,6 +645,22 @@ BEGIN
 					ns <= compute_mode_7_23;
 					
 				WHEN compute_mode_7_23 =>
+					bs_selector0_data_path_a0	<= "00111";
+					bs_selector1_data_path_a0	<= "00111";
+					bs_selector0_data_path_a1	<= "00111";
+					bs_selector1_data_path_a1	<= "00111";
+					bs_selector0_data_path_a2	<= "00111";
+					bs_selector1_data_path_a2	<= "00111";
+					bs_selector0_data_path_a3	<= "00111";
+					bs_selector1_data_path_a3	<= "00111";		
+					bs_selector0_data_path_l0	<= "00111";
+					bs_selector1_data_path_l0	<= "00111";		
+					bs_selector0_data_path_l1	<= "00111";
+					bs_selector1_data_path_l1	<= "00111";		
+					bs_selector0_data_path_l2	<= "00111";
+					bs_selector1_data_path_l2	<= "00111";		
+					bs_selector0_data_path_l3	<= "00111";
+					bs_selector1_data_path_l3	<= "00111";
 					enable_modes_sad_buffer_above	<= "00000000001000000";
 					enable_modes_sad_buffer_left	<= "00000000001000000";
 					
@@ -587,6 +699,22 @@ BEGIN
 					ns <= compute_mode_8_24;
 				
 				WHEN compute_mode_8_24 =>
+					bs_selector0_data_path_a0	<= "01000";
+					bs_selector1_data_path_a0	<= "01000";
+					bs_selector0_data_path_a1	<= "01000";
+					bs_selector1_data_path_a1	<= "01000";
+					bs_selector0_data_path_a2	<= "01000";
+					bs_selector1_data_path_a2	<= "01000";
+					bs_selector0_data_path_a3	<= "01000";
+					bs_selector1_data_path_a3	<= "01000";		
+					bs_selector0_data_path_l0	<= "01000";
+					bs_selector1_data_path_l0	<= "01000";		
+					bs_selector0_data_path_l1	<= "01000";
+					bs_selector1_data_path_l1	<= "01000";		
+					bs_selector0_data_path_l2	<= "01000";
+					bs_selector1_data_path_l2	<= "01000";		
+					bs_selector0_data_path_l3	<= "01000";
+					bs_selector1_data_path_l3	<= "01000";
 					enable_modes_sad_buffer_above	<= "00000000010000000";
 					enable_modes_sad_buffer_left	<= "00000000010000000";
 					
@@ -625,6 +753,22 @@ BEGIN
 					ns <= compute_mode_9_25;
 				
 				WHEN compute_mode_9_25 =>
+					bs_selector0_data_path_a0	<= "01001";
+					bs_selector1_data_path_a0	<= "01001";
+					bs_selector0_data_path_a1	<= "01001";
+					bs_selector1_data_path_a1	<= "01001";
+					bs_selector0_data_path_a2	<= "01001";
+					bs_selector1_data_path_a2	<= "01001";
+					bs_selector0_data_path_a3	<= "01001";
+					bs_selector1_data_path_a3	<= "01001";		
+					bs_selector0_data_path_l0	<= "01001";
+					bs_selector1_data_path_l0	<= "01001";		
+					bs_selector0_data_path_l1	<= "01001";
+					bs_selector1_data_path_l1	<= "01001";		
+					bs_selector0_data_path_l2	<= "01001";
+					bs_selector1_data_path_l2	<= "01001";		
+					bs_selector0_data_path_l3	<= "01001";
+					bs_selector1_data_path_l3	<= "01001";
 					enable_modes_sad_buffer_above	<= "00000000100000000";
 					enable_modes_sad_buffer_left	<= "00000000100000000";
 					
@@ -663,6 +807,22 @@ BEGIN
 					ns <= compute_mode_10_26;					
 				
 				WHEN compute_mode_10_26 =>
+					bs_selector0_data_path_a0	<= "01010";
+					bs_selector1_data_path_a0	<= "01010";
+					bs_selector0_data_path_a1	<= "01010";
+					bs_selector1_data_path_a1	<= "01010";
+					bs_selector0_data_path_a2	<= "01010";
+					bs_selector1_data_path_a2	<= "01010";
+					bs_selector0_data_path_a3	<= "01010";
+					bs_selector1_data_path_a3	<= "01010";		
+					bs_selector0_data_path_l0	<= "01010";
+					bs_selector1_data_path_l0	<= "01010";		
+					bs_selector0_data_path_l1	<= "01010";
+					bs_selector1_data_path_l1	<= "01010";		
+					bs_selector0_data_path_l2	<= "01010";
+					bs_selector1_data_path_l2	<= "01010";		
+					bs_selector0_data_path_l3	<= "01010";
+					bs_selector1_data_path_l3	<= "01010";
 					enable_modes_sad_buffer_above	<= "00000001000000000";
 					enable_modes_sad_buffer_left	<= "00000001000000000";
 					
@@ -701,6 +861,22 @@ BEGIN
 					ns <= compute_mode_11_27;
 				
 				WHEN compute_mode_11_27 =>
+					bs_selector0_data_path_a0	<= "01011";
+					bs_selector1_data_path_a0	<= "01011";
+					bs_selector0_data_path_a1	<= "01011";
+					bs_selector1_data_path_a1	<= "01011";
+					bs_selector0_data_path_a2	<= "01011";
+					bs_selector1_data_path_a2	<= "01011";
+					bs_selector0_data_path_a3	<= "01011";
+					bs_selector1_data_path_a3	<= "01011";		
+					bs_selector0_data_path_l0	<= "01011";
+					bs_selector1_data_path_l0	<= "01011";		
+					bs_selector0_data_path_l1	<= "01011";
+					bs_selector1_data_path_l1	<= "01011";		
+					bs_selector0_data_path_l2	<= "01011";
+					bs_selector1_data_path_l2	<= "01011";		
+					bs_selector0_data_path_l3	<= "01011";
+					bs_selector1_data_path_l3	<= "01011";
 					enable_modes_sad_buffer_above	<= "00000010000000000";
 					enable_modes_sad_buffer_left	<= "00000010000000000";
 					
@@ -739,6 +915,22 @@ BEGIN
 					ns <= compute_mode_12_28;
 					
 				WHEN compute_mode_12_28 =>
+					bs_selector0_data_path_a0	<= "01100";
+					bs_selector1_data_path_a0	<= "01100";
+					bs_selector0_data_path_a1	<= "01100";
+					bs_selector1_data_path_a1	<= "01100";
+					bs_selector0_data_path_a2	<= "01100";
+					bs_selector1_data_path_a2	<= "01100";
+					bs_selector0_data_path_a3	<= "01100";
+					bs_selector1_data_path_a3	<= "01100";		
+					bs_selector0_data_path_l0	<= "01100";
+					bs_selector1_data_path_l0	<= "01100";		
+					bs_selector0_data_path_l1	<= "01100";
+					bs_selector1_data_path_l1	<= "01100";		
+					bs_selector0_data_path_l2	<= "01100";
+					bs_selector1_data_path_l2	<= "01100";		
+					bs_selector0_data_path_l3	<= "01100";
+					bs_selector1_data_path_l3	<= "01100";
 					enable_modes_sad_buffer_above	<= "00000100000000000";
 					enable_modes_sad_buffer_left	<= "00000100000000000";
 					
@@ -777,6 +969,22 @@ BEGIN
 					ns <= compute_mode_13_29;
 				
 				WHEN compute_mode_13_29 =>
+					bs_selector0_data_path_a0	<= "01101";
+					bs_selector1_data_path_a0	<= "01101";
+					bs_selector0_data_path_a1	<= "01101";
+					bs_selector1_data_path_a1	<= "01101";
+					bs_selector0_data_path_a2	<= "01101";
+					bs_selector1_data_path_a2	<= "01101";
+					bs_selector0_data_path_a3	<= "01101";
+					bs_selector1_data_path_a3	<= "01101";		
+					bs_selector0_data_path_l0	<= "01101";
+					bs_selector1_data_path_l0	<= "01101";		
+					bs_selector0_data_path_l1	<= "01101";
+					bs_selector1_data_path_l1	<= "01101";		
+					bs_selector0_data_path_l2	<= "01101";
+					bs_selector1_data_path_l2	<= "01101";		
+					bs_selector0_data_path_l3	<= "01101";
+					bs_selector1_data_path_l3	<= "01101";
 					enable_modes_sad_buffer_above	<= "00001000000000000";
 					enable_modes_sad_buffer_left	<= "00001000000000000";
 					
@@ -815,6 +1023,22 @@ BEGIN
 					ns <= compute_mode_14_30;
 					
 				WHEN compute_mode_14_30 =>
+					bs_selector0_data_path_a0	<= "01110";
+					bs_selector1_data_path_a0	<= "01110";
+					bs_selector0_data_path_a1	<= "01110";
+					bs_selector1_data_path_a1	<= "01110";
+					bs_selector0_data_path_a2	<= "01110";
+					bs_selector1_data_path_a2	<= "01110";
+					bs_selector0_data_path_a3	<= "01110";
+					bs_selector1_data_path_a3	<= "01110";		
+					bs_selector0_data_path_l0	<= "01110";
+					bs_selector1_data_path_l0	<= "01110";		
+					bs_selector0_data_path_l1	<= "01110";
+					bs_selector1_data_path_l1	<= "01110";		
+					bs_selector0_data_path_l2	<= "01110";
+					bs_selector1_data_path_l2	<= "01110";		
+					bs_selector0_data_path_l3	<= "01110";
+					bs_selector1_data_path_l3	<= "01110";
 					enable_modes_sad_buffer_above	<= "00010000000000000";
 					enable_modes_sad_buffer_left	<= "00010000000000000";
 					
@@ -853,6 +1077,22 @@ BEGIN
 					ns <= compute_mode_15_31;
 				
 				WHEN compute_mode_15_31 =>
+					bs_selector0_data_path_a0	<= "01111";
+					bs_selector1_data_path_a0	<= "01111";
+					bs_selector0_data_path_a1	<= "01111";
+					bs_selector1_data_path_a1	<= "01111";
+					bs_selector0_data_path_a2	<= "01111";
+					bs_selector1_data_path_a2	<= "01111";
+					bs_selector0_data_path_a3	<= "01111";
+					bs_selector1_data_path_a3	<= "01111";		
+					bs_selector0_data_path_l0	<= "01111";
+					bs_selector1_data_path_l0	<= "01111";		
+					bs_selector0_data_path_l1	<= "01111";
+					bs_selector1_data_path_l1	<= "01111";		
+					bs_selector0_data_path_l2	<= "01111";
+					bs_selector1_data_path_l2	<= "01111";		
+					bs_selector0_data_path_l3	<= "01111";
+					bs_selector1_data_path_l3	<= "01111";
 					enable_modes_sad_buffer_above	<= "00100000000000000";
 					enable_modes_sad_buffer_left	<= "00100000000000000";
 					
@@ -891,6 +1131,22 @@ BEGIN
 					ns <= compute_mode_16_32;
 					
 				WHEN compute_mode_16_32 =>
+					bs_selector0_data_path_a0	<= "10000";
+					bs_selector1_data_path_a0	<= "10000";
+					bs_selector0_data_path_a1	<= "10000";
+					bs_selector1_data_path_a1	<= "10000";
+					bs_selector0_data_path_a2	<= "10000";
+					bs_selector1_data_path_a2	<= "10000";
+					bs_selector0_data_path_a3	<= "10000";
+					bs_selector1_data_path_a3	<= "10000";		
+					bs_selector0_data_path_l0	<= "10000";
+					bs_selector1_data_path_l0	<= "10000";		
+					bs_selector0_data_path_l1	<= "10000";
+					bs_selector1_data_path_l1	<= "10000";		
+					bs_selector0_data_path_l2	<= "10000";
+					bs_selector1_data_path_l2	<= "10000";		
+					bs_selector0_data_path_l3	<= "10000";
+					bs_selector1_data_path_l3	<= "10000";
 					enable_modes_sad_buffer_above	<= "01000000000000000";
 					enable_modes_sad_buffer_left	<= "01000000000000000";
 					
@@ -929,6 +1185,22 @@ BEGIN
 					ns <= compute_mode_17_33;
 					
 				WHEN compute_mode_17_33 =>
+					bs_selector0_data_path_a0	<= "10001";
+					bs_selector1_data_path_a0	<= "10001";
+					bs_selector0_data_path_a1	<= "10001";
+					bs_selector1_data_path_a1	<= "10001";
+					bs_selector0_data_path_a2	<= "10001";
+					bs_selector1_data_path_a2	<= "10001";
+					bs_selector0_data_path_a3	<= "10001";
+					bs_selector1_data_path_a3	<= "10001";		
+					bs_selector0_data_path_l0	<= "10001";
+					bs_selector1_data_path_l0	<= "10001";		
+					bs_selector0_data_path_l1	<= "10001";
+					bs_selector1_data_path_l1	<= "10001";		
+					bs_selector0_data_path_l2	<= "10001";
+					bs_selector1_data_path_l2	<= "10001";		
+					bs_selector0_data_path_l3	<= "10001";
+					bs_selector1_data_path_l3	<= "10001";
 					enable_modes_sad_buffer_above	<= "10000000000000000";
 					enable_modes_sad_buffer_left	<= "10000000000000000";
 					
