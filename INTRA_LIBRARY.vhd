@@ -3,7 +3,25 @@ USE ieee.std_logic_1164.all;
 
 PACKAGE INTRA_LIBRARY IS
 
-	TYPE fsm IS (idle, load_neighbors, load_original,load_original_left3,compute_mode_9_25,final0,final1,final2,final3,final4,final5);
+	TYPE fsm IS (idle, load_neighbors, load_original,load_original_left3,
+					compute_mode_1_1,
+					compute_mode_2_18,
+					compute_mode_3_19,
+					compute_mode_4_20,
+					compute_mode_5_21,
+					compute_mode_6_22,
+					compute_mode_7_23,
+					compute_mode_8_24,
+					compute_mode_9_25,
+					compute_mode_10_26,
+					compute_mode_11_27,
+					compute_mode_12_28,
+					compute_mode_13_29,
+					compute_mode_14_30,
+					compute_mode_15_31,
+					compute_mode_16_32,
+					compute_mode_17_33,
+					final0,final1,final2,final3,final4,final5);
 	
 
 	COMPONENT bs0 IS
